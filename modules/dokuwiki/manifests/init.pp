@@ -1,26 +1,16 @@
 class dokuwiki {
   # example class to install dokuwiki
   # ** highly ** simplified
-  
-  # Apache
-  package { 'httpd':
-    ensure => 'installed',
-  }
-  service { 'httpd':
-    ensure => 'running',
-    require => Package['httpd'],
-  }
-
-  #PHP
-  package { 'php': 
-    ensure => 'installed',
-    notify => Service['httpd'],
-  }
 
   # Dokuwiki source
   $dokuwiki_source = '/root/dokuwiki-stable.tgz'
   $dokuwiki_home = '/var/www/html/dokuwiki'
   
+  # Apache
+  class {'dokuwiki::apache':
+    dokuwiki_home => $dokuwiki_home
+  }
+
   file { $dokuwiki_home:
     ensure => 'directory',
     mode   => '0755',
