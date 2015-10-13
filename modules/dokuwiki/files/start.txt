@@ -1,0 +1,19 @@
+====== Welcome to the LISA 2015 Puppet Tutorial. ======
+
+We setup Dokuwiki using Puppet, this is a **very** simple example.
+
+===== What we used to get to this point: =====
+
+  * Package
+  * File
+  * Service
+  * Exec
+
+===== KISS =====
+
+  * Only define what you need
+  * Specify dependencies not steps
+
+===== Documentation =====
+  * [[puppet:type|Puppet Type Reference]]
+  * [[puppet:function|Puppet Function Reference]]
